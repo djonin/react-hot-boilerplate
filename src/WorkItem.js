@@ -1,19 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-const removeWorkItem = (name) => {
-    return {
-        type: 'REMOVE_ITEM',
-        name
-    };
-};
-
-const toggleFlagOnItem = (name) => {
-    return {
-        type: 'TOGGLE_FLAG',
-        name
-    };
-};
+import Actions from './actions/WorkItemActions';
 
 const mapStateToWorkItemProps = (
     state,
@@ -31,12 +18,12 @@ const mapDispatchToWorkItemProps = (
     return {
         onRemoveClick: () => {
             dispatch(
-                removeWorkItem(ownProps.name)
+                Actions.removeWorkItem(ownProps.name)
             );
         },
         onFlagToggleClick: (flagged) => {
             dispatch(
-                toggleFlagOnItem(ownProps.name)
+                Actions.toggleFlagOnItem(ownProps.name)
             );
         }
     };

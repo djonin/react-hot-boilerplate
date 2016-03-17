@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import WorkItem from './WorkItem';
 
 const mapStateToWorkItemListProps = (state) => {
-
     return {
         workItems: state.items
     };
@@ -23,7 +22,7 @@ const WorkItemList = (
                                 <WorkItem name={item.name} id={item.id}/>
                             </div>
                         </li>
-                    )
+                    );
                 })
             }
         </ul>
